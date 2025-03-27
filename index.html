@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmTrack - Smart Farming Assistant</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <i class="fas fa-leaf"></i>
+            <span>FarmTrack</span>
+        </div>
+        <div class="nav-menu">
+            <a href="index.html" class="active">Dashboard</a>
+            <a href="crop-analysis.html">Crop Analysis</a>
+            <a href="#weather">Weather</a>
+            <a href="#recommendations">Recommendations</a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="dashboard-grid">
+            <!-- Weather Widget -->
+            <div class="widget weather-widget">
+                <h2>Weather Forecast</h2>
+                <div class="weather-info">
+                    <i class="fas fa-sun"></i>
+                    <div class="temperature">28°C</div>
+                    <div class="description">Sunny</div>
+                </div>
+                <div class="forecast">
+                    <div class="forecast-item">
+                        <span>Mon</span>
+                        <i class="fas fa-cloud-sun"></i>
+                        <span>26°C</span>
+                    </div>
+                    <div class="forecast-item">
+                        <span>Tue</span>
+                        <i class="fas fa-cloud"></i>
+                        <span>24°C</span>
+                    </div>
+                    <div class="forecast-item">
+                        <span>Wed</span>
+                        <i class="fas fa-cloud-rain"></i>
+                        <span>23°C</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Crop Monitoring Widget -->
+            <div class="widget monitoring-widget">
+                <h2><i class="fas fa-robot"></i> AI Crop Analysis</h2>
+                <div class="crop-status">
+                    <div class="status-item healthy">
+                        <div class="status-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="status-details">
+                            <h3>Crop Health</h3>
+                            <p>Wheat Field - Block A</p>
+                            <div class="health-meter">
+                                <div class="meter-fill" style="width: 85%;">85%</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="status-item warning">
+                        <div class="status-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <div class="status-details">
+                            <h3>Pest Detection</h3>
+                            <p>Minor aphid presence detected</p>
+                            <button class="action-btn">View Solution</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resource Optimization Widget -->
+            <div class="widget resource-widget">
+                <h2><i class="fas fa-tachometer-alt"></i> Resource Management</h2>
+                <div class="resource-metrics">
+                    <div class="metric">
+                        <div class="metric-icon water">
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <div class="metric-details">
+                            <h3>Water Usage</h3>
+                            <div class="usage-bar">
+                                <div class="bar-fill optimal" style="width: 65%;">65%</div>
+                            </div>
+                            <p>Optimal irrigation level</p>
+                        </div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-icon fertilizer">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <div class="metric-details">
+                            <h3>Fertilizer Status</h3>
+                            <div class="usage-bar">
+                                <div class="bar-fill warning" style="width: 20%;">20%</div>
+                            </div>
+                            <p>Schedule next application</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="ai-recommendation">
+                    <i class="fas fa-lightbulb"></i>
+                    <p>AI Suggestion: Reduce irrigation by 15% based on forecasted rainfall</p>
+                </div>
+            </div>
+
+            <!-- Market Prices -->
+            <div class="widget market-widget">
+                <h2>Market Prices</h2>
+                <div class="price-list">
+                    <div class="price-item">
+                        <span>Wheat</span>
+                        <span class="price">₹2,400/q</span>
+                        <span class="trend up"><i class="fas fa-arrow-up"></i> 2.3%</span>
+                    </div>
+                    <div class="price-item">
+                        <span>Rice</span>
+                        <span class="price">₹3,200/q</span>
+                        <span class="trend down"><i class="fas fa-arrow-down"></i> 1.1%</span>
+                    </div>
+                    <div class="price-item">
+                        <span>Maize</span>
+                        <span class="price">₹1,800/q</span>
+                        <span class="trend up"><i class="fas fa-arrow-up"></i> 3.5%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Alerts & Notifications -->
+            <div class="widget alerts-widget">
+                <h2>Alerts & Updates</h2>
+                <div class="alert-list">
+                    <div class="alert-item warning">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <p>Heavy rainfall expected in the next 48 hours</p>
+                    </div>
+                    <div class="alert-item info">
+                        <i class="fas fa-info-circle"></i>
+                        <p>Optimal time to apply fertilizer: Tomorrow morning</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

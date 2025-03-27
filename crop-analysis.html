@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Analysis - FarmTrack</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <i class="fas fa-leaf"></i>
+            <span>FarmTrack</span>
+        </div>
+        <div class="nav-menu">
+            <a href="index.html">Dashboard</a>
+            <a href="crop-analysis.html" class="active">Crop Analysis</a>
+            <a href="#weather">Weather</a>
+            <a href="#recommendations">Recommendations</a>
+        </div>
+    </nav>
+
+    <main class="crop-analysis-page">
+        <div class="page-header">
+            <h1><i class="fas fa-seedling"></i> AI Crop Analysis</h1>
+            <p>Get personalized recommendations for your crops based on environmental conditions</p>
+        </div>
+
+        <div class="content-grid">
+            <!-- Analysis Form Section -->
+            <div class="widget crop-analysis-widget">
+                <h2><i class="fas fa-robot"></i> Smart Crop Analysis</h2>
+                <form id="cropAnalysisForm" class="analysis-form">
+                    <div class="form-group">
+                        <label for="cropType">Crop Type</label>
+                        <select id="cropType" name="cropType" required>
+                            <option value="">Select Crop</option>
+                            <option value="wheat">Wheat</option>
+                            <option value="rice">Rice</option>
+                            <option value="maize">Maize</option>
+                            <option value="cotton">Cotton</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="soilType">Soil Type</label>
+                        <select id="soilType" name="soilType" required>
+                            <option value="">Select Soil Type</option>
+                            <option value="loamy">Loamy</option>
+                            <option value="sandy">Sandy</option>
+                            <option value="clay">Clay</option>
+                            <option value="silt">Silty</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="issues">Current Issues</label>
+                        <textarea id="issues" name="issues" rows="4" placeholder="Describe any issues with your crops (e.g., yellow leaves, pest damage, etc.)" required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-robot"></i> Get AI Recommendations
+                    </button>
+                </form>
+            </div>
+
+            <!-- Recommendations Display Section -->
+            <div class="widget recommendations-history">
+                <div id="aiRecommendations" class="recommendations-panel" style="display: none;">
+                    <h3><i class="fas fa-lightbulb"></i> Latest AI Recommendations</h3>
+                    <div class="recommendation-content">
+                        <!-- AI recommendations will be inserted here -->
+                    </div>
+                    <div class="recommendation-meta">
+                        <span class="timestamp"></span>
+                        <button class="save-btn" onclick="saveRecommendation()">
+                            <i class="fas fa-save"></i> Save
+                        </button>
+                    </div>
+                </div>
+
+                <div id="savedRecommendations" class="saved-recommendations">
+                    <h3><i class="fas fa-history"></i> Past Recommendations</h3>
+                    <div class="recommendations-list">
+                        <template id="recommendation-template">
+                            <div class="recommendation-card">
+                                <div class="recommendation-header">
+                                    <span class="timestamp"></span>
+                                    <button class="delete-btn">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                                <div class="recommendation-content">
+                                    <h4>Crop Information</h4>
+                                    <p><strong>Crop Type:</strong> <span class="crop-type"></span></p>
+                                    <p><strong>Soil Type:</strong> <span class="soil-type"></span></p>
+                                    <p><strong>Issues:</strong> <span class="issues"></span></p>
+                                    
+                                    <h4>AI Recommendations</h4>
+                                    <div class="ai-recommendation"></div>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="js/crop-analysis.js"></script>
+</body>
+</html>

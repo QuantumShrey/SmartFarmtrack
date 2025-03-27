@@ -1,0 +1,782 @@
+:root {
+    --primary-color: #2ecc71;
+    --secondary-color: #27ae60;
+    --background-color: #f5f6fa;
+    --widget-bg: #ffffff;
+    --text-color: #2d3436;
+    --border-radius: 12px;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: var(--widget-bg);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow);
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.nav-menu {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: var(--primary-color);
+}
+
+/* Main Content */
+main {
+    padding: 2rem;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Widget Styles */
+.widget {
+    background-color: var(--widget-bg);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+}
+
+.widget h2 {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+/* Weather Widget */
+.weather-info {
+    text-align: center;
+    margin: 1.5rem 0;
+}
+
+.weather-info i {
+    font-size: 3rem;
+    color: #f1c40f;
+}
+
+.temperature {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0.5rem 0;
+}
+
+.forecast {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+}
+
+.forecast-item {
+    text-align: center;
+}
+
+.forecast-item i {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+    color: #74b9ff;
+}
+
+/* Recommendations Widget */
+.recommendation-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.recommendation-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: var(--border-radius);
+}
+
+.recommendation-item i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+/* Market Prices Widget */
+.price-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.price-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    background-color: #f8f9fa;
+    border-radius: var(--border-radius);
+}
+
+.trend {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.trend.up {
+    color: var(--primary-color);
+}
+
+.trend.down {
+    color: #e74c3c;
+}
+
+/* Alerts Widget */
+.alert-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.alert-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+}
+
+.alert-item.warning {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.alert-item.info {
+    background-color: #cce5ff;
+    color: #004085;
+}
+
+/* AI Crop Monitoring Widget */
+.monitoring-widget .crop-status {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.status-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    background-color: #f8f9fa;
+}
+
+.status-item.healthy {
+    border-left: 4px solid var(--primary-color);
+}
+
+.status-item.warning {
+    border-left: 4px solid #f1c40f;
+}
+
+.status-icon i {
+    font-size: 1.5rem;
+}
+
+.status-item.healthy .status-icon i {
+    color: var(--primary-color);
+}
+
+.status-item.warning .status-icon i {
+    color: #f1c40f;
+}
+
+.health-meter {
+    margin-top: 0.5rem;
+    background-color: #e9ecef;
+    border-radius: 10px;
+    height: 8px;
+    overflow: hidden;
+}
+
+.meter-fill {
+    background-color: var(--primary-color);
+    height: 100%;
+    text-align: right;
+    font-size: 0.75rem;
+    color: white;
+    line-height: 8px;
+}
+
+.action-btn {
+    margin-top: 0.5rem;
+    padding: 0.25rem 0.75rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #f1c40f;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.action-btn:hover {
+    background-color: #f39c12;
+}
+
+/* Resource Management Widget */
+.resource-metrics {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.metric {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: var(--border-radius);
+}
+
+.metric-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.metric-icon.water {
+    background-color: #cce5ff;
+    color: #0066cc;
+}
+
+.metric-icon.fertilizer {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.metric-details {
+    flex: 1;
+}
+
+.usage-bar {
+    margin: 0.5rem 0;
+    background-color: #e9ecef;
+    border-radius: 10px;
+    height: 8px;
+    overflow: hidden;
+}
+
+.bar-fill {
+    height: 100%;
+    text-align: right;
+    font-size: 0.75rem;
+    color: white;
+    line-height: 8px;
+}
+
+.bar-fill.optimal {
+    background-color: var(--primary-color);
+}
+
+.bar-fill.warning {
+    background-color: #f1c40f;
+}
+
+.ai-recommendation {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #e8f4f8;
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.ai-recommendation i {
+    color: #3498db;
+    font-size: 1.25rem;
+}
+
+/* Crop Analysis Form Styles */
+.crop-analysis-widget {
+    max-width: 800px;
+}
+
+.analysis-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-row {
+    display: flex;
+    gap: 1rem;
+}
+
+.form-group.half {
+    width: 50%;
+}
+
+.form-group.third {
+    width: calc(33.33% - 0.67rem);
+}
+
+.form-group label {
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.form-group input,
+.form-group select {
+    padding: 0.75rem;
+    border: 1px solid #e0e0e0;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.submit-btn {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.submit-btn:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Recommendations Panel */
+.recommendations-panel {
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--primary-color);
+}
+
+.recommendations-panel h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.recommendation-content {
+    margin: 1rem 0;
+    line-height: 1.6;
+}
+
+.recommendation-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0e0e0;
+}
+
+.timestamp {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.save-btn {
+    padding: 0.5rem 1rem;
+    background: none;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.save-btn:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Crop Analysis Page Styles */
+.crop-analysis-page {
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.page-header {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 2rem;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.page-header p {
+    color: #666;
+    margin-top: 0.5rem;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+/* Saved Recommendations Styles */
+.recommendations-history {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.saved-recommendations h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.recommendations-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.saved-recommendation {
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.recommendation-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.saved-date {
+    color: #666;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.delete-btn {
+    padding: 0.25rem 0.5rem;
+    background: none;
+    border: none;
+    color: #dc3545;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.delete-btn:hover {
+    opacity: 1;
+}
+
+.saved-content {
+    margin: 1rem 0;
+    line-height: 1.6;
+}
+
+.recommendation-footer {
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid #e0e0e0;
+}
+
+.analysis-date {
+    color: #666;
+    font-size: 0.8rem;
+    font-style: italic;
+}
+
+.no-data {
+    text-align: center;
+    color: #666;
+    padding: 2rem;
+    background-color: #f8f9fa;
+    border-radius: var(--border-radius);
+}
+
+/* Error Messages */
+.error-message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #ff4444;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 1000;
+    animation: slideIn 0.3s ease-out;
+}
+
+.error-message i {
+    font-size: 1.2em;
+}
+
+.error-message button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 0 5px;
+    margin-left: 10px;
+    font-size: 1.2em;
+}
+
+.error-message button:hover {
+    opacity: 0.8;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .nav-brand {
+        margin-bottom: 1rem;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+        width: 100%;
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .crop-analysis-widget,
+    .recommendations-history {
+        margin-bottom: 1rem;
+    }
+
+    .form-group {
+        margin-bottom: 1rem;
+    }
+
+    .submit-btn {
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .recommendation-card {
+        padding: 1rem;
+    }
+
+    .recommendation-header {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .recommendation-content {
+        font-size: 0.9rem;
+    }
+}
+
+/* Tablet Responsive Design */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .dashboard-grid,
+    .content-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+
+    main {
+        padding: 1.5rem;
+    }
+}
+
+/* Loading State */
+.submit-btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Alert Messages */
+.alert {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    z-index: 1000;
+    animation: slideIn 0.3s ease-out;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.alert-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Improve Form Readability */
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Recommendations Panel */
+.recommendations-panel {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+    border-radius: var(--border-radius);
+    border: 1px solid #e9ecef;
+}
+
+.recommendations-panel h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.recommendation-content {
+    white-space: pre-wrap;
+    line-height: 1.6;
+}
