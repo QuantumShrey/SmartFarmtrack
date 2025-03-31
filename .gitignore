@@ -1,29 +1,25 @@
-# Environment variables
+# Environment variables and credentials
 .env
-.env.local
-.env.*.local
-
-# Python
+*.json
+!package.json
 __pycache__/
 *.py[cod]
 *$py.class
-*.so
-.Python
-env/
-venv/
-.env/
-.venv/
 
-# IDE
+# Virtual environment
+venv/
+env/
+ENV/
+
+# IDE specific files
 .vscode/
 .idea/
 *.swp
 *.swo
 
-# Logs
-*.log
-npm-debug.log*
-
-# Operating System
+# OS specific files
 .DS_Store
 Thumbs.db
+
+# Logs
+*.log

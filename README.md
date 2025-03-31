@@ -1,57 +1,74 @@
-# FarmTrack - Smart Farming Assistant
+# SmartFarmtrack 🌾
 
-FarmTrack is an AI-powered farming assistant that helps farmers optimize their crop management through intelligent analysis and recommendations.
+An intelligent farming assistant that combines AI capabilities with agricultural expertise to help farmers make better decisions.
 
 ## Features
 
-- AI-powered crop analysis using Google's Gemini API
-- Real-time weather monitoring
-- Market price tracking
-- Crop health recommendations
-- Responsive design for all devices
+- 🤖 **AI-Powered Chat Assistant**
+  - Natural language processing using Dialogflow
+  - Advanced responses with Gemini AI
+  - Contextual farming advice and recommendations
+
+- 🌱 **Crop Analysis**
+  - Real-time crop health monitoring
+  - Disease detection and solutions
+  - Growth stage tracking
+
+- ☁️ **Weather Integration**
+  - Real-time weather updates
+  - Crop-specific weather impact analysis
+  - Precipitation forecasting
+
+- 📊 **Resource Management**
+  - Water usage optimization
+  - Fertilizer scheduling
+  - Smart irrigation recommendations
 
 ## Setup
 
-1. Clone the repository
-```bash
-git clone https://github.com/yourusername/farmtrack.git
-cd farmtrack
-```
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/QuantumShrey/SmartFarmtrack.git
+   cd SmartFarmtrack
+   ```
 
-2. Create a `.env` file in the root directory and add your Gemini API key:
-```
-GEMINI_API_KEY=your_api_key_here
-```
+2. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-3. Install dependencies:
-```bash
-pip install -r requirements.txt
-```
+3. **Environment Setup**
+   - Copy `.env.example` to `.env`
+   - Add your API keys and credentials:
+     - GOOGLE_PROJECT_ID
+     - GOOGLE_APPLICATION_CREDENTIALS
+     - GEMINI_API_KEY
 
-4. Run the application:
-```bash
-python app.py
-```
+4. **Run the application**
+   ```bash
+   python app.py
+   ```
 
-## Technologies Used
+5. **Access the dashboard**
+   - Open `http://localhost:5000` in your browser
+   - Use the chat widget for AI assistance
+   - Navigate through different sections using the top menu
 
-- Backend: Python/Flask
-- Frontend: HTML, CSS, JavaScript
-- AI: Google Gemini API
-- Storage: Local Storage for saving recommendations
+## Technology Stack
 
-## Environment Variables
-
-- `GEMINI_API_KEY`: Your Google Gemini API key
-
-## License
-
-MIT License - Feel free to use this project for personal or commercial purposes.
+- **Backend**: Python, Flask
+- **Frontend**: HTML5, CSS3, JavaScript
+- **AI/ML**: Google Dialogflow, Google Gemini
+- **APIs**: OpenWeatherMap, Sentinel Hub
 
 ## Contributing
 
 1. Fork the repository
-2. Create your feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a new Pull Request
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
